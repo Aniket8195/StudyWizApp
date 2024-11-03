@@ -107,7 +107,7 @@ const Dashboard = () => {
 
   const handleJoinRoom = async (roomId) => {
     try {
-      await roomService.joinRoom(roomId);
+     // await roomService.joinRoom(roomId);
       window.location.href = `/room/${roomId}`;
     } catch (err) {
       console.error('Failed to join room:', err);
@@ -205,13 +205,16 @@ const Dashboard = () => {
                   </div>
                   <div className="card-actions">
                     <button
-                      onClick={() => handleJoinRoom(room.id)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleJoinRoom(room.id)}}
                       className="join-button"
                     >
                       Join Room
                     </button>
                     <button
-                      onClick={() => {
+                      onClick={(e) => {
+                        e.stopPropagation(); 
                         navigator.clipboard.writeText(`${window.location.origin}/room/${room.id}`);
                       }}
                       className="share-button"
@@ -312,13 +315,16 @@ const Dashboard = () => {
                   </div>
                   <div className='button-container'>
                   <button
-                    onClick={() => handleJoinRoom(room.id)}
+                     onClick={(e) => {
+                      e.stopPropagation();
+                      handleJoinRoom(room.id)}}
                     className="join-button"
                   >
                     Join Room
                   </button>
                   <button
-                      onClick={() => {
+                      onClick={(e) => {
+                        e.stopPropagation(); 
                         navigator.clipboard.writeText(`${window.location.origin}/room/${room.id}`);
                       }}
                       className="share-button"

@@ -5,7 +5,7 @@ import Login  from "./pages/Login"
 import  Profile  from "./pages/Profile"
 import Register from "./pages/Register"
 import RoomDetails from "./pages/RoomDetails"
-
+import VideoRoom from "./pages/Video/VideoRoom"
 
 const AppRoutes=()=>{
     const token = localStorage.getItem("token");
@@ -22,7 +22,7 @@ const AppRoutes=()=>{
                     path="/room-details/:id" 
                     element={token ? <RoomDetails /> : <Navigate to="/" replace />} 
                 />
-
+            <Route path="/room/:roomId" element={<VideoRoom />} />
         </Routes>
     </Router>
 }
