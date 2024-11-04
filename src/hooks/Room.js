@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8080/room-service'; 
+// const API_BASE_URL = 'http://localhost:8080/room-service'; 
+const API_BASE_URL = 'http://api-gateway.default.svc.cluster.local:8080/room-service'; 
 
 export const roomService = {
   getMyRooms: async (userId) => {
