@@ -9,9 +9,9 @@ import {
 } from 'lucide-react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import roomService from '../hooks/room';
 import '../pages/Dashboard/Dashboard.css';
 import { useState, useEffect } from "react";
+import { roomService } from './../hooks/Room';
 
 const RoomDetails = () => {
     const roomId=window.location.pathname.split("/")[2];
